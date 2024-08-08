@@ -43,6 +43,11 @@ jobs:
           node -v
           make build
 
+      - name: Install Kedro-Viz development package
+        run: |
+          pip install -e package
+        shell: bash
+
       - name: Update demo-project build directory wit the latest changes
         run: |
           cd demo-project
@@ -50,14 +55,8 @@ jobs:
             exit 1
           fi
         shell: bash
-
-      - name: Install Kedro-Viz development package
-        run: |
-          pip install -e package
-        shell: bash
         
-      - name: Checkout
-        uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
