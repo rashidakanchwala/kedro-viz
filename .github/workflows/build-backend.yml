@@ -5,12 +5,12 @@ name: Build backend
 on:
   push:
     paths:
-      - 'package/**'
-      - '.github/**'
+      - 'packaged/**'
+      - '.githubd/**'
   pull_request:
     paths:
-      - 'package/**'
-      - '.github/**'
+      - 'packagde/**'
+      - '.githubd/**'
   workflow_dispatch:
 jobs:
   e2e_tests:
