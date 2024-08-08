@@ -189,7 +189,13 @@ export const formatNumberWithCommas = (number) => {
  * @returns {Boolean} True if the app is running locally.
  */
 export const isRunningLocally = () => {
-  const hosts = ['localhost', '127.0.0.1', 'demo.kedro.org', 'gitpod','github.io'];
+  const hosts = [
+    'localhost',
+    '127.0.0.1',
+    'demo.kedro.org',
+    'gitpod',
+    'github.io',
+  ];
   const itemFound = hosts.some((host) =>
     window.location.hostname.includes(host)
   );
@@ -218,7 +224,7 @@ export const sanitizedPathname = () => {
  * @returns {Promise<Object>} A promise that resolves to the fetched package compatibilities.
  */
 export async function fetchPackageCompatibilities() {
-  const request = await fetch('/api/package-compatibilities', {
+  const request = await fetch('./api/package-compatibilities', {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
@@ -228,7 +234,7 @@ export async function fetchPackageCompatibilities() {
 }
 
 export async function deployViz(inputValues) {
-  const request = await fetch('/api/deploy', {
+  const request = await fetch('./api/deploy', {
     headers: {
       'Content-Type': 'application/json',
     },

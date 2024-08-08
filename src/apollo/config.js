@@ -29,12 +29,10 @@ const errorLink = onError(
         (async () => {
           const { operationName, variables } = operation;
           let urlPath = window.location.pathname;
-          let staticFilePath = `${sanitizedPathname()}/data/${operationName}.json`;
+          let staticFilePath = `${apiBaseUrl}/${operationName}.json`;
 
           if (variables?.runIds) {
-            staticFilePath = `${sanitizedPathname()}/data/${operationName}/${
-              variables.runIds
-            }.json`;
+            staticFilePath = `${apiBaseUrl}/${operationName}/${variables.runIds}.json`;
           }
 
           try {
