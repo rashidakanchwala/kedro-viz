@@ -43,7 +43,7 @@ jobs:
           node -v
           make build
 
-      - name: Install Kedro-Viz development package
+      - name: Install Kedro-Viz development packag
         run: |
           pip install -e package
         shell: bash
