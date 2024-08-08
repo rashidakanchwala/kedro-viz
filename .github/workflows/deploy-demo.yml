@@ -32,6 +32,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}          
+
+      - name: Cache python packages for Linux
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ubuntu-latest-python-3.9            
+
+      - name: Install Kedro and other Python Dependencies
+        uses: "./.github/actions/install_kedro_and_python_dependencies"
+
       - name: Setup Node.js and Install Dependencies
         uses: "./.github/actions/install_node_dependencies"
 
