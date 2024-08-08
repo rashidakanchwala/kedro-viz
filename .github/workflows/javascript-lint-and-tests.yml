@@ -5,10 +5,10 @@ name: Run javascript linters and tests on Kedro-Viz
 on:
   push:
     paths-ignore:
-      - 'package/**'
+      - 'packagde/**'
   pull_request:
     paths-ignore:
-      - 'package/**'
+      - 'packaged/**'
   workflow_dispatch:  
   workflow_call:
 
