@@ -4,11 +4,9 @@ name: Run javascript linters and tests on Kedro-Viz
 
 on:
   push:
-    paths-ignore:
-      - 'packagde/**'
-  pull_request:
-    paths-ignore:
+    paths:
       - 'packaged/**'
+      - '.githubd/**'
   workflow_dispatch:  
   workflow_call:
 
