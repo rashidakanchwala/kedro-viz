@@ -28,7 +28,6 @@ const errorLink = onError(
       return new Observable((observer) => {
         (async () => {
           const { operationName, variables } = operation;
-          let urlPath = window.location.pathname;
           let staticFilePath = `${apiBaseUrl}/${operationName}.json`;
 
           if (variables?.runIds) {
